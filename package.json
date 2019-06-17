@@ -3,7 +3,8 @@
   "version"    : "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts"    : {
-    "start": "node buildScripts/srcServer.js"
+    "prestart": "node buildScripts/startMessage.js",
+    "start"   : "node buildScripts/srcServer.js"
   },
   "author"      : "Khwilo Kabaka",
   "license"     : "MIT",
