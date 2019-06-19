@@ -1,6 +1,6 @@
 import './index.css';
 
-import { getUsers } from './api/userApi';
+import { getUsers, deleteUser } from './api/userApi';
 
 const usersBodyID = document.getElementById('users');
 
@@ -19,4 +19,16 @@ getUsers().then(result => {
   });
 
   usersBodyID.innerHTML = usersBody;
+
+  const deleteLinks = document.getElementsByClassName('deleteUser');
+
+  Array.from(deleteLinks, link => {
+    link.onclick = event => {
+      const element = event.target;
+      event.preventDefault();
+      deleteUser(element.attributes["data-id"].value);
+      const row = element.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  });
 });
