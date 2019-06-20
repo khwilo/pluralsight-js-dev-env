@@ -1,5 +1,5 @@
 export default function getBaseUrl() {
-  return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/': '/';
+  return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/': 'https://pure-basin-81533.herokuapp.com/';
 }
 
 const getQueryStringParameterByName = (name, url) => {
